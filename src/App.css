@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: "Lato", sans-serif;
+	font-size: 18px;
+	padding: 0;
+	margin: 0;
+	position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator {
+	width: 320px;
+	height: 520px;
+	padding: 120px 0 0;
+	background: #2a2929;
+	position: absolute;
+	box-sizing: border-box;
+
+	top: 50vh;
+	left: 50%;
+	margin: -260px 0 0 -160px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.display {
+	height: 80px;
+	box-sizing: border-box;
+	padding: 20px 20px 0;
+	font-size: 48px;
+	color: #fff;
+	text-align: right;
+	font-weight: 300;
+	position: absolute;
+	top: 30px;
+	right: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.keypad {
+	border-top: 0 none;
+	box-sizing: border-box;
+	width: 100%;
+	height: 401px;
 }
 
-.App-link {
-  color: #61dafb;
+.key {
+	width: 80px;
+	height: 80px;
+	display: block;
+	float: left;
+	background: #e0e0e0;
+	color: #000;
+	line-height: 80px;
+	text-align: center;
+
+	box-sizing: border-box;
+
+	cursor: pointer;
+
+	border: 0 none;
+	border-left: 1px solid #8e8e8e;
+	border-bottom: 1px solid #8e8e8e;
+
+	font-family: "Lato", sans-serif;
+	font-size: 32px;
+	font-weight: 100;
+
+	outline: 0 none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.key:nth-child(4n),
+.key:nth-child(19) {
+	border-right: 1px solid #8e8e8e;
+}
+
+.key-function {
+	background: #d6d6d6;
+}
+
+.key-operation {
+	background: #f7a357;
+	color: #fff;
+}
+
+.key-operation.key-active {
+	border-top: 2px solid #8e8e8e;
+	border-left: 2px solid #8e8e8e;
+	border-bottom: 2px solid #8e8e8e;
+}
+
+.key.key-0 {
+	width: 160px;
+	padding-right: 80px;
+}
+
+/* active */
+.key:active {
+	background: #b2b2b2;
+}
+
+.key-function:active {
+	background: #a9a9a9;
+}
+
+.key-operation:active {
+	background: #c2732f;
+	color: #686868;
+}
+
+@media (min-width: 800px) {
+	.calculator {
+		border-radius: 5px;
+		box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
+	}
+
+	.keypad {
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.key.key-0 {
+		border-bottom-left-radius: 5px;
+	}
+
+	.key.key-equal {
+		border-bottom-right-radius: 5px;
+	}
 }
